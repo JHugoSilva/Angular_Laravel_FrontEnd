@@ -1,0 +1,59 @@
+<div class="hold-transition register-page">
+    <div class="register-box">
+        <div class="card card-outline card-primary">
+            <div class="card-body">
+                <p class="login-box-msg">Register a new membership</p>
+
+                <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="name" ngModel placeholder="Full name">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-danger pl-1" *ngIf="errors.name">{{ errors.name }}</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" name="email" ngModel placeholder="Email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-danger pl-1" *ngIf="errors.email">{{ errors.email }}</p>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" name="password" ngModel placeholder="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-danger pl-1" *ngIf="errors.password">{{ errors.password }}</p>
+
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" name="password_confirmation" ngModel placeholder="Retype password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+                <a routerLink="/login" class="text-center">Login</a>
+            </div>
+            <!-- /.form-box -->
+        </div><!-- /.card -->
+    </div>
+    <!-- /.register-box -->
+</div>
